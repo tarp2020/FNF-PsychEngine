@@ -66,6 +66,7 @@ class Note extends FlxSprite
 
 	public var noAnimation:Bool = false;
 	public var hitCausesMiss:Bool = false;
+	public var distance:Float = 2000;//plan on doing scroll directions soon -bb
 
 	private function set_texture(value:String):String {
 		if(texture != value) {
@@ -193,7 +194,7 @@ class Note extends FlxSprite
 						prevNote.animation.play('redhold');
 				}
 
-				prevNote.scale.y *= Conductor.stepCrochet / 100 * 1.05 * PlayState.SONG.speed;
+				prevNote.scale.y *= Conductor.stepCrochet / 100 * 1.05 * PlayState.songSpeed;
 				if(PlayState.isPixelStage) {
 					prevNote.scale.y *= 1.19;
 				}
@@ -256,6 +257,9 @@ class Note extends FlxSprite
 		}
 		if(isSustainNote) {
 			scale.y = lastScaleY;
+			if(ClientPrefs.keSustains) {
+				scale.y *= 0.75;
+			}
 		}
 		updateHitbox();
 
