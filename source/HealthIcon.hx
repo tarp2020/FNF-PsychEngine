@@ -1,5 +1,8 @@
 package;
 
+import flixel.FlxG;
+import flixel.graphics.FlxGraphic;
+import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.FlxSprite;
 import openfl.utils.Assets as OpenFlAssets;
 
@@ -11,6 +14,12 @@ class HealthIcon extends FlxSprite
 	private var isOldIcon:Bool = false;
 	private var isPlayer:Bool = false;
 	private var char:String = '';
+
+	public var initialWidth:Float = 0;
+	public var initialHeight:Float = 0;
+
+	public var offsetX = 0;
+	public var offsetY = 0;
 
 	public function new(char:String = 'bf', isPlayer:Bool = false)
 	{

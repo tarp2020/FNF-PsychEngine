@@ -509,6 +509,8 @@ class TitleState extends MusicBeatState
 					addMoreText('Funkin'); // credTextShit.text += '\nFunkin';
 
 				case 16:
+					addMoreText('Umm'); // credTextShit.text += '\nMODDING';
+				case 17:
 					skipIntro();
 			}
 		}
